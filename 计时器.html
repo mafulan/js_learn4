@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="img/1.png" width="390px" height="480px">
+    <script>
+        var timer = 0;
+        var oImg = document.getElementsByTagName("img")[0];
+        var arr = ["img/1.png","img/2.png","img/3.png","img/4.png"];
+        var i=0;
+         timer = setInterval(function(){
+                 
+                  oImg.src = arr[i++];
+                  i==arr.length &&(i=0);
+              
+        },1500);
+
+         oImg.onmouseover = function(){
+             clearInterval(timer);
+         }
+         oImg.onmouseout = function(){
+            timer = setInterval(function(){
+                  
+                  oImg.src = arr[i++];
+                  i==arr.length &&(i=0);
+              
+              
+        },1000);
+
+         }
+    </script>
+</body>
+</html>

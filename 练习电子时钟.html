@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p{
+            width: 200px;
+            height: 50px;
+            background-color: black;
+            color: red;
+            font-size: 30px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <script>
+        var oP = document.getElementsByTagName("p")[0];
+        clock();
+        setInterval(clock,1000);
+        function clock(){
+            var myTime = new Date();
+            var iHours = myTime.getHours(); //获取时
+            var iMin = myTime.getMinutes(); //获取分
+            var iSec = myTime.getSeconds(); //获取秒
+            oP.innerHTML =  add(iHours) +":"+add(iMin)+":"+add(iSec);
+
+        }
+        function  add(num){
+               return  num<10?"0"+num:""+num;
+
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" >
+        <div ></div>
+        <img src="img/1.png" width="390px" height="480px">
+    </div>
+
+    <div id="div2" >
+        <div ></div>
+        <img src="img/1.png" width="390px" height="480px">
+    </div>
+
+    <script>
+        var arr1 =["img/1.png","img/2.png","img/3.png","img/4.png"];
+        var arr2 =["img/1.png","img/2.png","img/3.png"];
+        var oDiv1 = document.getElementById("div1");
+        var oDiv2 = document.getElementById("div2");
+
+        function fn(oWrap,arr,attr){
+            var oDiv = oWrap.getElementsByTagName("div")[0];
+            var oImg = oWrap.getElementsByTagName("img")[0];
+            var aBtn = oWrap.getElementsByTagName("button");
+            var str = "";
+            for(var i=0;i<arr.length;i++){
+            str += "<button>"+(i+1)+"</button>";
+        }
+           oDiv.innerHTML = str;
+           for(var i=0;i<aBtn.length;i++){
+            aBtn[i].index = i;
+            aBtn[i][attr] = function(){
+                   oImg.src = arr[this.index];   
+            }
+        }
+        }
+        fn(oDiv1,arr1,"onclick");
+        fn(oDiv2,arr2,"onmouseover");  
+    </script>
+  
+</body>
+</html>

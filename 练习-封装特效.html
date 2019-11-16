@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" >
+        <div ></div>
+        <img src="img/1.png" width="390px" height="480px">
+    </div>
+    <script>
+        var arr1 =["img/1.png","img/2.png","img/3.png","img/4.png"];
+       
+        var oDiv1 = document.getElementById("div1");
+        var oDiv = oDiv1.getElementsByTagName("div")[0];
+        var oImg = oDiv1.getElementsByTagName("img")[0];
+        var aBtn = oDiv1.getElementsByTagName("button");
+        var str = "";
+        for(var i=0;i<4;i++){
+            str += "<button>"+(i+1)+"</button>";
+        }
+        oDiv.innerHTML = str;
+        for(var i=0;i<aBtn.length;i++){
+            aBtn[i].index = i;
+            aBtn[i].onclick = function(){
+                   oImg.src = arr1[this.index];
+            }
+        }
+    </script>
+</body>
+</html>

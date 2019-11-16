@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var attr = [];
+         function fn1(a,b){
+             if(a<b){
+               attr.push(a);
+               attr.push(b);
+             }else{
+                attr.push(b);
+               attr.push(a);
+             }
+             return attr;
+
+            //  return a<b ? [a,b] :[b,a]; 方法二
+         }
+       
+      console.log(fn1(-3,-5));
+  
+    </script>
+</body>
+</html>

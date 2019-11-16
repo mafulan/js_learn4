@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>距离放假还有: <span></span></p>
+    <script>
+       
+        var oTimeNew = new  Date();
+         oTimeNew.setHours(16);
+         oTimeNew.setMinutes(30);
+         oTimeNew.setSeconds(0);
+       
+         var oSpan = document.getElementsByTagName("span")[0];
+         clock();
+         var timer=setInterval(clock,1000);
+         function clock(){
+            var myTime = new Date();
+            var iHours = myTime.getHours(); //获取时
+            var iMin = myTime.getMinutes(); //获取分
+            var iSec = myTime.getSeconds(); //获取秒
+         
+            var t = (oTimeNew-myTime)/1000;
+            var iH = Math.floor(t%86400/3600); //毫秒转时
+            var iM = Math.floor(t%3600/60); //毫秒转分
+            var iS = Math.floor(t%60); //毫秒转秒
+        
+            oSpan.innerHTML = add(iH) +":"+add(iM)+":"+add(iS);
+            t == 0 &&clearInterval(timer);
+        }
+         function add(num){
+            return  num<10?"0"+num:""+num;
+         }
+
+        
+    </script>
+</body>
+</html>
